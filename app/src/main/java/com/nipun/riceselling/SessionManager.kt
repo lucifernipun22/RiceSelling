@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.content.SharedPreferences.Editor
 import android.preference.PreferenceManager
+import com.google.gson.Gson
 
 class SessionManager(context: Context?) {
     private val mPrefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
@@ -25,6 +26,7 @@ class SessionManager(context: Context?) {
     fun getBooleanData(key: String?): Boolean {
         return mPrefs.getBoolean(key, false)
     }
+
 
     fun setIntData(key: String?, `val`: Int) {
         mEditor.putInt(key, `val`)

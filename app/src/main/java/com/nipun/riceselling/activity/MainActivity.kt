@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
                 ) {
                     val i = Intent(this@MainActivity, HomeActivity::class.java)
                     startActivity(i)
-                } else if (sessionManager!!.getBooleanData(SessionManager.isopen)) {
+                } else if (!sessionManager!!.getBooleanData(SessionManager.login)) {
                     val i = Intent(this@MainActivity, LoginActivity::class.java)
                     startActivity(i)
                 } else {
