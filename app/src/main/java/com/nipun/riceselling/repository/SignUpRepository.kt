@@ -1,5 +1,6 @@
 package com.nipun.riceselling.repository
 
+import android.annotation.SuppressLint
 import android.content.Context
 import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.MutableLiveData
@@ -15,19 +16,22 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class LoginRepository(var baseActivity: BaseActivity){
+class SignUpRepository(var baseActivity: BaseActivity){
 
-    private var loginResponse = MutableLiveData<LoginModel>()
+    private var signUpResponse = MutableLiveData<LoginModel>()
 
-     fun hitLoginApi(editEmail: String, editPass: String, context: Context): MutableLiveData<LoginModel> {
+    fun hitSignUpApi(fName: String, lName: String, phone: String,editEmail: String, editPass: String, context: Context): MutableLiveData<LoginModel> {
         if (Utiles.Utiles.internetChack()) {
             val jsonObject = JsonObject()
+            jsonObject.addProperty("f_name",fName)
+            jsonObject.addProperty("l_name",lName)
             jsonObject.addProperty("email", editEmail)
-            jsonObject.addProperty("email_or_phone", editEmail)
+            jsonObject.addProperty("phone", phone)
             jsonObject.addProperty("password", editPass)
-            val call: Call<LoginModel> = baseActivity.apiService!!.getLogin(jsonObject)
+            val call: Call<LoginModel> = baseActivity.apiService!!.getSignUp(jsonObject)
             baseActivity.startProgress()
             call.enqueue(object : Callback<LoginModel?> {
+                @SuppressLint("NullSafeMutableLiveData")
                 override fun onResponse(
                     call: Call<LoginModel?>,
                     response: Response<LoginModel?>
@@ -37,7 +41,7 @@ class LoginRepository(var baseActivity: BaseActivity){
                         if (response.code() == Constants.STATUS_OK) {
                             if (response.body() != null) {
                                 val body: LoginModel? = response.body()
-                                loginResponse.value = body
+                                signUpResponse.value = body
                             }
                         } else {
                             MotionToast.createToast(baseActivity,
@@ -82,7 +86,7 @@ class LoginRepository(var baseActivity: BaseActivity){
                 MotionToast.LONG_DURATION,
                 ResourcesCompat.getFont(context, R.font.helvetica_regular))
         }
-        return loginResponse
+        return signUpResponse
     }
 
 }

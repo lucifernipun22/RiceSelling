@@ -18,9 +18,28 @@
         android:theme="@style/Theme.RiceSelling"
         tools:node="replace">
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".activity.RegisterActivity"
             android:exported="true"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.SignUpActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.NewPasswordActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ForgetVerifyActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.ForgetPasswordActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.InfoActivity"
             android:exported="true"

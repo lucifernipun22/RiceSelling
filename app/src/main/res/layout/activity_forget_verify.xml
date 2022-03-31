@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ForgetVerifyActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/include_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:src="@drawable/ic_email"
+        app:layout_constraintEnd_toEndOf="@+id/include"
+        app:layout_constraintStart_toStartOf="@+id/include"
+        app:layout_constraintTop_toBottomOf="@id/include"
+        app:tint="@color/primaryColor" />
+
+    <TextView
+        android:id="@+id/tvPlease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Please enter 4 digit code."
+        android:textColor="@color/md_grey_500"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="nipunj270@gmail.com"
+        android:textColor="@color/md_grey_500"
+        app:layout_constraintEnd_toEndOf="@+id/tvPlease"
+        app:layout_constraintStart_toStartOf="@+id/tvPlease"
+        app:layout_constraintTop_toBottomOf="@+id/tvPlease" />
+
+    <com.chaos.view.PinView
+        android:id="@+id/firstPinView"
+        style="@style/PinWidget.PinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:cursorVisible="false"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:inputType="number"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cursorColor="@color/primaryColor"
+        app:cursorWidth="2dp"
+        app:hideLineWhenFilled="false"
+        app:itemCount="4"
+        app:itemHeight="50dp"
+        app:itemRadius="8dp"
+        app:itemSpacing="30dp"
+        app:itemWidth="50dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvEmail"
+        app:layout_constraintStart_toStartOf="@+id/tvEmail"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmail"
+        app:lineColor="@color/md_grey_400"
+        app:lineWidth="3dp"
+        app:viewType="rectangle" />
+    <TextView
+        android:id="@+id/notReceive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="I didn't receive the code"
+        android:textColor="@color/md_grey_500"
+        app:layout_constraintEnd_toEndOf="@+id/firstPinView"
+        app:layout_constraintStart_toStartOf="@+id/firstPinView"
+        app:layout_constraintTop_toBottomOf="@+id/firstPinView" />
+    <TextView
+        android:id="@+id/tvResend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="Resend Code"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/notReceive"
+        app:layout_constraintStart_toStartOf="@+id/notReceive"
+        app:layout_constraintTop_toBottomOf="@+id/notReceive" />
+    <Button
+        android:id="@+id/verifyButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/ic_rectangle"
+        android:backgroundTint="@color/primaryColor"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="VERIFY"
+        android:textAllCaps="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvResend"
+        app:layout_constraintStart_toStartOf="@+id/tvResend"
+        app:layout_constraintTop_toBottomOf="@+id/tvResend" />
+</androidx.constraintlayout.widget.ConstraintLayout>
