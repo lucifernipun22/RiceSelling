@@ -76,6 +76,7 @@ class LoginActivity : BaseActivity() {
     private fun loginApi(editEmail: String, editPass: String) {
         loginViewModel.loginApi(editEmail, editPass,this).observe(this, {
             sessionManager?.setBooleanData(login, true)
+            sessionManager?.setStringData("token",it.token)
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             finish()

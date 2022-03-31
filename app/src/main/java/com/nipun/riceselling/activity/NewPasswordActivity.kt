@@ -11,6 +11,8 @@ import com.nipun.riceselling.SessionManager
 import com.nipun.riceselling.utils.BaseActivity
 import com.nipun.riceselling.utils.motionToast.MotionToast
 import com.nipun.riceselling.utils.motionToast.MotionToastStyle
+import com.nipun.riceselling.viewModel.LoginViewModel
+import com.nipun.riceselling.viewModel.LoginViewModelFactory
 import com.nipun.riceselling.viewModel.SavePassViewModel
 import com.nipun.riceselling.viewModel.SavePassViewModelFactory
 import kotlinx.android.synthetic.main.activity_forget_verify.include
@@ -31,7 +33,16 @@ class NewPasswordActivity : BaseActivity() {
             viewModelProviderFactory
         )[SavePassViewModel::class.java]
     }
-
+    private val loginViewModel: LoginViewModel by lazy {
+        val viewModelProviderFactory =
+            LoginViewModelFactory(
+                this
+            )
+        ViewModelProvider(
+            this,
+            viewModelProviderFactory
+        )[LoginViewModel::class.java]
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_password)
@@ -115,7 +126,13 @@ class NewPasswordActivity : BaseActivity() {
 
     private fun callSavePassApi(newTv: String, confirmTv: String) {
         savePassViewModel.savePassApi(email!!, token!!, newTv, confirmTv, this).observe(this, {
+            loginApi(email!!,confirmTv)
+        })
+    }
+    private fun loginApi(editEmail: String, editPass: String) {
+        loginViewModel.loginApi(editEmail, editPass,this).observe(this, {
             sessionManager?.setBooleanData(SessionManager.login, true)
+            sessionManager?.setStringData("token",it.token)
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             finish()

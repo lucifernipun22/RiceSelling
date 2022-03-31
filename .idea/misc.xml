@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/RiceSelling/app/src/main/res/drawable/bottom_nav_icon_color_selector.xml" value="0.2703125" />
         <entry key="..\:/RiceSelling/app/src/main/res/drawable/btn_grey_rounded_normal.xml" value="0.2703125" />
         <entry key="..\:/RiceSelling/app/src/main/res/drawable/btn_grey_rounded_pressed.xml" value="0.2703125" />
         <entry key="..\:/RiceSelling/app/src/main/res/drawable/btn_grey_rounded_selector.xml" value="0.2703125" />
@@ -12,12 +13,15 @@
         <entry key="..\:/RiceSelling/app/src/main/res/drawable/color_view_background.xml" value="0.2703125" />
         <entry key="..\:/RiceSelling/app/src/main/res/drawable/edittext_border.xml" value="0.2703125" />
         <entry key="..\:/RiceSelling/app/src/main/res/drawable/ic_back.xml" value="0.2703125" />
+        <entry key="..\:/RiceSelling/app/src/main/res/drawable/ic_back_2.xml" value="0.14635416666666667" />
+        <entry key="..\:/RiceSelling/app/src/main/res/drawable/ic_baseline_local_offer_24.xml" value="0.2703125" />
         <entry key="..\:/RiceSelling/app/src/main/res/drawable/ic_india.xml" value="0.2703125" />
         <entry key="..\:/RiceSelling/app/src/main/res/drawable/ic_rectangle.xml" value="0.2703125" />
         <entry key="..\:/RiceSelling/app/src/main/res/drawable/ic_rice_selling.xml" value="0.2703125" />
+        <entry key="..\:/RiceSelling/app/src/main/res/drawable/rounded_rectangle.xml" value="0.2703125" />
         <entry key="..\:/RiceSelling/app/src/main/res/layout/activity_forget_password.xml" value="0.2" />
         <entry key="..\:/RiceSelling/app/src/main/res/layout/activity_forget_verify.xml" value="0.264" />
-        <entry key="..\:/RiceSelling/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/RiceSelling/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/RiceSelling/app/src/main/res/layout/activity_info.xml" value="0.25416666666666665" />
         <entry key="..\:/RiceSelling/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/RiceSelling/app/src/main/res/layout/activity_main.xml" value="0.13020833333333334" />
@@ -25,10 +29,18 @@
         <entry key="..\:/RiceSelling/app/src/main/res/layout/activity_register.xml" value="0.24010416666666667" />
         <entry key="..\:/RiceSelling/app/src/main/res/layout/activity_sign_up.xml" value="0.25025641025641027" />
         <entry key="..\:/RiceSelling/app/src/main/res/layout/dialog_common.xml" value="0.176" />
+        <entry key="..\:/RiceSelling/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/RiceSelling/app/src/main/res/layout/fragment_offer.xml" value="0.24010416666666667" />
         <entry key="..\:/RiceSelling/app/src/main/res/layout/fragment_onboarding.xml" value="0.25416666666666665" />
+        <entry key="..\:/RiceSelling/app/src/main/res/layout/fragment_order.xml" value="0.25416666666666665" />
+        <entry key="..\:/RiceSelling/app/src/main/res/layout/fragment_setting.xml" value="0.24010416666666667" />
         <entry key="..\:/RiceSelling/app/src/main/res/layout/full_color_toast.xml" value="0.25416666666666665" />
+        <entry key="..\:/RiceSelling/app/src/main/res/layout/include_home_toolbar.xml" value="0.264" />
+        <entry key="..\:/RiceSelling/app/src/main/res/layout/include_offer_toolbar.xml" value="0.25416666666666665" />
         <entry key="..\:/RiceSelling/app/src/main/res/layout/include_toolbar.xml" value="0.25416666666666665" />
+        <entry key="..\:/RiceSelling/app/src/main/res/layout/item_offer_list.xml" value="0.4" />
         <entry key="..\:/RiceSelling/app/src/main/res/layout/motion_toast.xml" value="0.25416666666666665" />
+        <entry key="..\:/RiceSelling/app/src/main/res/menu/bottom_menu_nav.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

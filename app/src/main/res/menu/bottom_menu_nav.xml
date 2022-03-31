@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/first_fragment"
+        android:title="Home"
+        android:icon="@drawable/ic_home"/>
+
+    <item
+        android:id="@+id/second_fragment"
+        android:title="Orders"
+        android:icon="@drawable/ic_order"/>
+
+    <item
+        android:id="@+id/third_fragment"
+        android:title="Offers"
+        android:icon="@drawable/ic_coupon"/>
+
+    <item
+        android:id="@+id/fourth_fragment"
+        android:title="Setting"
+        android:icon="@drawable/ic_setting"/>
+
+</menu>

@@ -53,6 +53,7 @@ class RegisterActivity : BaseActivity() {
             this
         ).observe(this, {
             sessionManager?.setBooleanData(SessionManager.login, true)
+            sessionManager?.setStringData("token",it.token)
             val intent = Intent(this,HomeActivity::class.java)
             startActivity(intent)
         })
