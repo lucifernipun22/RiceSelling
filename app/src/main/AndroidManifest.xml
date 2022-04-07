@@ -18,9 +18,33 @@
         android:theme="@style/Theme.RiceSelling"
         tools:node="replace">
         <activity
-            android:name=".activity.RegisterActivity"
+            android:name=".activity.NotificationActivity"
             android:exported="true"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.LiveChatActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AboutUsActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PrivacyActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.TermsConditionActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MyProfileActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.SignUpActivity"
             android:exported="true"

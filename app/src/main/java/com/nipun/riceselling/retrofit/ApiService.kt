@@ -1,10 +1,7 @@
 package com.nipun.riceselling.retrofit
 
 import com.google.gson.JsonObject
-import com.nipun.riceselling.model.CouponModel
-import com.nipun.riceselling.model.ForgetPasswordModel
-import com.nipun.riceselling.model.LoginModel
-import com.nipun.riceselling.model.UserInfoModel
+import com.nipun.riceselling.model.*
 import com.nipun.riceselling.utils.Constants
 import retrofit2.Call
 import retrofit2.http.Body
@@ -35,4 +32,21 @@ interface ApiService {
     @GET(Constants.API_USER_INFO)
     fun getUserInfo(@Header("Authorization") token: String): Call<UserInfoModel>
 
+    @GET(Constants.API_CONFIG)
+    fun getConfig(): Call<ConfigModel>
+
+    @GET(Constants.API_BANNER)
+    fun getBanner(): Call<BannerModel>
+
+    @GET(Constants.API_TIME_SLOT)
+    fun getTimeSlot(): Call<TimeSlotModel>
+
+    @GET(Constants.API_GET_MESSAGE)
+    fun getMessage(@Header("Authorization") token: String): Call<GetMessagesModel>
+
+    @POST(Constants.API_SEND_MESSAGE)
+    fun sendMessage(@Header("Authorization") token: String,@Body jsonObject: JsonObject): Call<ForgetPasswordModel>
+
+    @GET(Constants.API_NOTIFICATION_LIST)
+    fun getNotificationList(@Header("Authorization") token: String): Call<NotificationListModel>
 }

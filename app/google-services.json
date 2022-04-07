@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "137950084547",
+    "project_id": "riceselling-941d6",
+    "storage_bucket": "riceselling-941d6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:137950084547:android:6843107bd32251b7951176",
+        "android_client_info": {
+          "package_name": "com.nipun.receselling"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "137950084547-8gjmdenq442vnl9lvu5im30bnntts3hq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByDNXE2kouwUcV562KW0Ao_6lO3Yc8T94"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "137950084547-8gjmdenq442vnl9lvu5im30bnntts3hq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

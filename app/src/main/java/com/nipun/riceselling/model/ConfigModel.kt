@@ -1,0 +1,32 @@
+package com.nipun.riceselling.model
+
+data class ConfigModel(
+    var about_us: String,
+    var app_store_config: AppStoreConfig,
+    var base_urls: BaseUrls,
+    var branches: List<Branche>,
+    var cash_on_delivery: String,
+    var country: String,
+    var currency_symbol: String,
+    var currency_symbol_position: String,
+    var delivery_charge: Int,
+    var delivery_management: DeliveryManagement,
+    var digital_payment: String,
+    var ecommerce_address: String,
+    var ecommerce_email: String,
+    var ecommerce_location_coverage: EcommerceLocationCoverage,
+    var ecommerce_logo: String,
+    var ecommerce_name: String,
+    var ecommerce_phone: String,
+    var email_verification: Boolean,
+    var footer_text: String,
+    var maintenance_mode: Boolean,
+    var minimum_order_value: Int,
+    var phone_verification: Boolean,
+    var play_store_config: PlayStoreConfig,
+    var privacy_policy: String,
+    var self_pickup: Int,
+    var social_media_link: List<SocialMediaLink>,
+    var software_version: String,
+    var terms_and_conditions: String
+)

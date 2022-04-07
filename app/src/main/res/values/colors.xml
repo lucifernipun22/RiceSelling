@@ -333,4 +333,6 @@
 
     <!--    Dark Toast bg-->
     <color name="dark_bg_color">#2F3032</color>
+    <color name="list_dropdown_divider_color">#92a3a3a3</color>
+
 </resources>

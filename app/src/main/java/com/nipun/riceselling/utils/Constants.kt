@@ -9,6 +9,12 @@ object Constants {
     const val API_SIGN_UP = "api/v1/auth/register"
     const val API_COUPON_LIST = "api/v1/coupon/list"
     const val API_USER_INFO = "/api/v1/customer/info"
+    const val API_CONFIG = "/api/v1/config"
+    const val API_BANNER = "/api/v1/banners"
+    const val API_TIME_SLOT = "/api/v1/timeSlot"
+    const val API_GET_MESSAGE = "/api/v1/customer/message/get"
+    const val API_SEND_MESSAGE = "/api/v1/customer/message/send"
+    const val API_NOTIFICATION_LIST = "/api/v1/notifications"
 
 
     const val STATUS_OK = 200
