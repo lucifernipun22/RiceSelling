@@ -15,6 +15,8 @@ object Constants {
     const val API_GET_MESSAGE = "/api/v1/customer/message/get"
     const val API_SEND_MESSAGE = "/api/v1/customer/message/send"
     const val API_NOTIFICATION_LIST = "/api/v1/notifications"
+    const val API_CATEGORY_LIST = "/api/v1/categories"
+    const val API_POPULAR_PRODUCT = "/api/v1/products/latest"
 
 
     const val STATUS_OK = 200

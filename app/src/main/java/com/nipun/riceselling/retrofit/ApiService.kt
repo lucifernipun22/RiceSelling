@@ -4,10 +4,7 @@ import com.google.gson.JsonObject
 import com.nipun.riceselling.model.*
 import com.nipun.riceselling.utils.Constants
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface ApiService {
 
@@ -45,8 +42,27 @@ interface ApiService {
     fun getMessage(@Header("Authorization") token: String): Call<GetMessagesModel>
 
     @POST(Constants.API_SEND_MESSAGE)
-    fun sendMessage(@Header("Authorization") token: String,@Body jsonObject: JsonObject): Call<ForgetPasswordModel>
+    fun sendMessage(
+        @Header("Authorization") token: String,
+        @Body jsonObject: JsonObject
+    ): Call<ForgetPasswordModel>
 
     @GET(Constants.API_NOTIFICATION_LIST)
     fun getNotificationList(@Header("Authorization") token: String): Call<NotificationListModel>
+
+    @GET(Constants.API_CATEGORY_LIST)
+    fun getCategoryList(): Call<CategoryListModel>
+
+    @GET(Constants.API_POPULAR_PRODUCT)
+    fun getPopularList(): Call<PopularProductsModel>
+
+    @GET("/api/v1/categories/products/{id}")
+    fun getCategoryProductList(@Path("id") id: String): Call<CategoryProductModel>
+
+    @GET("/api/v1/products/details/{id}")
+    fun getProductDetail(@Path("id") id: String): Call<ProductDetailModel>
+
+    @GET("/api/v1/coupon/apply")
+    fun applyPromoCode(@Query("code") id: String,@Header("Authorization") token: String): Call<ApplyCodeModel>
+
 }

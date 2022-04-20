@@ -18,9 +18,21 @@
         android:theme="@style/Theme.RiceSelling"
         tools:node="replace">
         <activity
-            android:name=".activity.NotificationActivity"
+            android:name=".activity.CartActivity"
             android:exported="true"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.ProductDetailActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CategoryProductActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.NotificationActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.LiveChatActivity"
             android:exported="true"
