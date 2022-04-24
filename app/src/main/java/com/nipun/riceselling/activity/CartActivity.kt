@@ -1,6 +1,7 @@
 package com.nipun.riceselling.activity
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.core.content.res.ResourcesCompat
@@ -51,6 +52,10 @@ class CartActivity : BaseActivity() {
         toolbar.textView6.text = "Shopping Bag"
         toolbar.imageView4.setOnClickListener {
             finish()
+        }
+        btn_checkout.setOnClickListener {
+            val intent = Intent(this,CheckOutActivity::class.java)
+            startActivity(intent)
         }
         databaseHelper = DatabaseHelper(this)
         sessionManager = SessionManager(this)

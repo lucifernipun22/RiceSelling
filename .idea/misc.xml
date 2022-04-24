@@ -40,8 +40,10 @@
         <entry key="..\:/RiceSelling/app/src/main/res/drawable/tab_indicator_selected.xml" value="0.2703125" />
         <entry key="..\:/RiceSelling/app/src/main/res/drawable/tab_selector.xml" value="0.2703125" />
         <entry key="..\:/RiceSelling/app/src/main/res/layout/activity_about_us.xml" value="0.24010416666666667" />
+        <entry key="..\:/RiceSelling/app/src/main/res/layout/activity_add_address.xml" value="0.25416666666666665" />
         <entry key="..\:/RiceSelling/app/src/main/res/layout/activity_cart.xml" value="0.264" />
         <entry key="..\:/RiceSelling/app/src/main/res/layout/activity_category_product.xml" value="0.25416666666666665" />
+        <entry key="..\:/RiceSelling/app/src/main/res/layout/activity_check_out.xml" value="0.264" />
         <entry key="..\:/RiceSelling/app/src/main/res/layout/activity_forget_password.xml" value="0.2" />
         <entry key="..\:/RiceSelling/app/src/main/res/layout/activity_forget_verify.xml" value="0.264" />
         <entry key="..\:/RiceSelling/app/src/main/res/layout/activity_home.xml" value="0.2" />
@@ -77,6 +79,7 @@
         <entry key="..\:/RiceSelling/app/src/main/res/layout/item_notification.xml" value="0.536" />
         <entry key="..\:/RiceSelling/app/src/main/res/layout/item_offer_list.xml" value="0.4" />
         <entry key="..\:/RiceSelling/app/src/main/res/layout/item_setting_list.xml" value="0.264" />
+        <entry key="..\:/RiceSelling/app/src/main/res/layout/item_slide_layout.xml" value="0.25416666666666665" />
         <entry key="..\:/RiceSelling/app/src/main/res/layout/item_top_sales.xml" value="0.264" />
         <entry key="..\:/RiceSelling/app/src/main/res/layout/motion_toast.xml" value="0.25416666666666665" />
         <entry key="..\:/RiceSelling/app/src/main/res/menu/bottom_menu_nav.xml" value="0.25416666666666665" />
