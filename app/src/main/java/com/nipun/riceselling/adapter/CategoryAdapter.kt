@@ -26,7 +26,7 @@ class CategoryAdapter(var categoryListModel: CategoryListModel, var context: Con
         if (holder is CategoryViewHolder) {
             holder.title.text = coupon.name
             Glide.with(context)
-                .load(Constants.API_BASE_URL + "storage/app/public/category/" + "" + categoryListModel[position].image)
+                .load(Constants.API_BASE_URL + "admin/storage/app/public/category/" + "" + categoryListModel[position].image)
                 .placeholder(R.drawable.empty).into(holder.image)
             holder.cardView.setOnClickListener {
                 val intent = Intent(context, CategoryProductActivity::class.java)

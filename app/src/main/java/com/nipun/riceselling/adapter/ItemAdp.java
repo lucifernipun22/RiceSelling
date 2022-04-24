@@ -59,7 +59,7 @@ public class ItemAdp extends RecyclerView.Adapter<ItemAdp.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int i) {
         MyCart cart = mData.get(i);
-        Glide.with(mContext).load(Constants.API_BASE_URL + "storage/app/public/product/" + cart.getImage()).thumbnail(Glide.with(mContext).load(R.drawable.lodingimage)).into(holder.imgIcon);
+        Glide.with(mContext).load(Constants.API_BASE_URL + "admin/storage/app/public/product/" + cart.getImage()).thumbnail(Glide.with(mContext).load(R.drawable.lodingimage)).into(holder.imgIcon);
         double res = (Double.parseDouble(cart.getCost()) * mData.get(i).getDiscount()) / 100;
         res = Double.parseDouble(cart.getCost()) - res;
         holder.txtGram.setText("  " + cart.getWeight() + "  ");

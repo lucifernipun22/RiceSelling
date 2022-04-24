@@ -92,6 +92,7 @@ class LiveChatActivity : BaseActivity() {
     private fun callSendMessageApi(message: String) {
         sendMessageViewModel.sendMessageApi(this, sessionManager?.getStringData("token")!!, message)
             .observe(this, {
+                editTextMessage.text.clear()
                 getChatApi()
             })
     }

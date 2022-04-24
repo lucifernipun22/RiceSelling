@@ -83,6 +83,20 @@
         <entry key="..\:/RiceSelling/app/src/main/res/layout/item_top_sales.xml" value="0.264" />
         <entry key="..\:/RiceSelling/app/src/main/res/layout/motion_toast.xml" value="0.25416666666666665" />
         <entry key="..\:/RiceSelling/app/src/main/res/menu/bottom_menu_nav.xml" value="0.25416666666666665" />
+        <entry key="..\:/rice selling/RiceSelling/app/src/main/res/drawable/ic_baseline_arrow_drop_down_24.xml" value="0.2155" />
+        <entry key="..\:/rice selling/RiceSelling/app/src/main/res/drawable/ic_rectangle.xml" value="0.2155" />
+        <entry key="..\:/rice selling/RiceSelling/app/src/main/res/drawable/inc_rectangle_green.xml" value="0.2155" />
+        <entry key="..\:/rice selling/RiceSelling/app/src/main/res/layout/activity_add_address.xml" value="0.264" />
+        <entry key="..\:/rice selling/RiceSelling/app/src/main/res/layout/activity_address_adapter.xml" value="0.22826086956521738" />
+        <entry key="..\:/rice selling/RiceSelling/app/src/main/res/layout/activity_cart.xml" value="0.22826086956521738" />
+        <entry key="..\:/rice selling/RiceSelling/app/src/main/res/layout/activity_category_product.xml" value="0.12447916666666667" />
+        <entry key="..\:/rice selling/RiceSelling/app/src/main/res/layout/activity_check_out.xml" value="0.2" />
+        <entry key="..\:/rice selling/RiceSelling/app/src/main/res/layout/activity_sign_up.xml" value="0.1743659420289855" />
+        <entry key="..\:/rice selling/RiceSelling/app/src/main/res/layout/custome_mycard.xml" value="0.22826086956521738" />
+        <entry key="..\:/rice selling/RiceSelling/app/src/main/res/layout/include_address.xml" value="0.22826086956521738" />
+        <entry key="..\:/rice selling/RiceSelling/app/src/main/res/layout/include_offer_toolbar.xml" value="0.22826086956521738" />
+        <entry key="..\:/rice selling/RiceSelling/app/src/main/res/layout/item_banner.xml" value="0.22826086956521738" />
+        <entry key="..\:/rice selling/RiceSelling/app/src/main/res/layout/item_top_sales.xml" value="0.22826086956521738" />
       </map>
     </option>
   </component>

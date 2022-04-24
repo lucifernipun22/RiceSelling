@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.nipun.riceselling.R
+import com.nipun.riceselling.activity.AddAddressActivity
 import com.nipun.riceselling.viewHolder.SliderViewHolder
 
 class SlideAdapter(var list: List<String>, var context: Context) :
@@ -26,6 +27,7 @@ class SlideAdapter(var list: List<String>, var context: Context) :
             if (selectedItem == position) {
                 holder.cardView.setCardBackgroundColor(ContextCompat.getColor(context,R.color.primaryColor))
                 holder.title.setTextColor(ContextCompat.getColor(context,R.color.white))
+                (context as  AddAddressActivity).address_type = holder.title.text.toString()
             }else{
                 holder.cardView.setCardBackgroundColor(ContextCompat.getColor(context,R.color.md_blue_50))
                 holder.title.setTextColor(ContextCompat.getColor(context,R.color.md_grey_500))

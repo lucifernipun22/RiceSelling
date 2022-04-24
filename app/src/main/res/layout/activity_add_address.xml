@@ -22,6 +22,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/md_grey_100"
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -38,12 +39,12 @@
                     android:fontFamily="@font/montserrat_bold"
                     android:text="Label As"
                     android:textColor="@color/black"
-                    app:layout_constraintBottom_toTopOf="@+id/recyclerView2"
+                    app:layout_constraintBottom_toTopOf="@+id/recyclerViewAddType"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerView2"
+                    android:id="@+id/recyclerViewAddType"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_10sdp"
@@ -59,19 +60,7 @@
                     android:text="Delivery Address"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
-
-                <TextView
-                    android:id="@+id/textView14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_15sdp"
-                    android:layout_marginTop="25dp"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:text="Address Line"
-                    android:textColor="@color/md_grey_500"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView13" />
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerViewAddType" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/card1"
@@ -83,9 +72,8 @@
                     android:background="@drawable/ic_rectangle"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="10dp"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView14">
+                    app:layout_constraintTop_toBottomOf="@+id/textView13">
 
                     <EditText
                         android:id="@+id/editTextEmail"
@@ -95,24 +83,14 @@
                         android:layout_marginStart="20dp"
                         android:background="@null"
                         android:gravity="center|start"
-                        android:hint="Email"
+                        android:hint="Customer Name"
+                        android:textColorHint="@color/md_grey_500"
                         android:inputType="text"
                         android:maxLines="1"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/black" />
+                        android:textColor="@color/black" />
 
                 </androidx.cardview.widget.CardView>
-                <TextView
-                    android:id="@+id/textView15"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_15sdp"
-                    android:layout_marginTop="25dp"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:text="Contact Person Name"
-                    android:textColor="@color/md_grey_500"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/card1" />
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/card2"
                     android:layout_width="match_parent"
@@ -125,7 +103,7 @@
                     app:cardElevation="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView15">
+                    app:layout_constraintTop_toBottomOf="@+id/card1">
 
                     <EditText
                         android:id="@+id/editName"
@@ -135,27 +113,85 @@
                         android:layout_marginStart="20dp"
                         android:background="@null"
                         android:gravity="center|start"
-                        android:hint="Email"
+                        android:hint="House No."
                         android:inputType="text"
                         android:maxLines="1"
                         android:textColor="@color/black"
-                        android:textColorHint="@color/black" />
+                        android:textColorHint="@color/md_grey_500" />
 
                 </androidx.cardview.widget.CardView>
-                <TextView
-                    android:id="@+id/textView16"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_15sdp"
-                    android:layout_marginTop="25dp"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:text="Contact Person Number"
-                    android:textColor="@color/md_grey_500"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/card2" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/card3"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:background="@drawable/ic_rectangle"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/card2">
+
+                   <!-- <EditText
+                        android:id="@+id/editnumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|start"
+                        android:layout_marginStart="20dp"
+                        android:background="@null"
+                        android:gravity="center|start"
+                        android:hint="Pincode"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/md_grey_500" />-->
+                    <AutoCompleteTextView
+                        android:id="@+id/atv_names"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@null"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+                        android:hint="Pincode"
+                        android:textColorHint="@color/md_grey_500"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card4"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:background="@drawable/ic_rectangle"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/card3">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/atv_state"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@null"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+                        android:hint="State"
+                        android:textColorHint="@color/md_grey_500"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card5"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginBottom="@dimen/_10sdp"
@@ -168,21 +204,21 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView16">
+                    app:layout_constraintTop_toBottomOf="@+id/card4">
 
                     <EditText
-                        android:id="@+id/editnumber"
+                        android:id="@+id/number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|start"
                         android:layout_marginStart="20dp"
                         android:background="@null"
                         android:gravity="center|start"
-                        android:hint="Email"
+                        android:hint="Number"
                         android:inputType="text"
                         android:maxLines="1"
                         android:textColor="@color/black"
-                        android:textColorHint="@color/black" />
+                        android:textColorHint="@color/md_grey_500" />
 
                 </androidx.cardview.widget.CardView>
             </androidx.constraintlayout.widget.ConstraintLayout>

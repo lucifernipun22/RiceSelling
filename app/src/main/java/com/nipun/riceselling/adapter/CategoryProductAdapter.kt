@@ -80,7 +80,7 @@ class CategoryProductAdapter(var popularProductsModel: CategoryProductModel, var
             }
             holder.title.text = "${coupon.capacity}" + " " + "${coupon.unit}"
             Glide.with(context)
-                .load(Constants.API_BASE_URL + "storage/app/public/product/" + "" + popularProductsModel[position].image[0])
+                .load(Constants.API_BASE_URL + "admin/storage/app/public/product/" + "" + popularProductsModel[position].image[0])
                 .placeholder(R.drawable.empty).into(holder.imageView7)
             holder.tvOffer.text = coupon.name
             holder.clMain.setOnClickListener {

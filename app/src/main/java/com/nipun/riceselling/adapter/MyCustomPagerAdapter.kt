@@ -27,7 +27,7 @@ class MyCustomPagerAdapter(var context: Context,  var bannerDatumList: BannerMod
         val itemView: View = layoutInflater.inflate(R.layout.item_banner, container, false)
         val imageView = itemView.findViewById<View>(R.id.imageView) as ImageView
         Glide.with(context)
-            .load(Constants.API_BASE_URL + "storage/app/public/banner/" + "" + bannerDatumList[position].image)
+            .load(Constants.API_BASE_URL + "admin/storage/app/public/banner/" + "" + bannerDatumList[position].image)
             .placeholder(R.drawable.empty).into(imageView)
         container.addView(itemView)
         imageView.setOnClickListener {

@@ -29,7 +29,7 @@ class NotificationAdapter(var notificationListModel: NotificationListModel, var 
             var newDate : DateTime =
             holder.tvTime.text = SimpleDateFormat("dd-MM-yyyy hh:mm a").format(newDate)*/
             Glide.with(context)
-                .load(Constants.API_BASE_URL + "storage/app/public/notification/" + "" + coupon.image)
+                .load(Constants.API_BASE_URL + "admin/storage/app/public/notification/" + "" + coupon.image)
                 .placeholder(R.drawable.app_logo).into(holder.ivNoti)
 
 

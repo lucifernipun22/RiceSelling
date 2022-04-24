@@ -56,13 +56,27 @@ interface ApiService {
     @GET(Constants.API_POPULAR_PRODUCT)
     fun getPopularList(): Call<PopularProductsModel>
 
-    @GET("/api/v1/categories/products/{id}")
+    @GET("admin/api/v1/categories/products/{id}")
     fun getCategoryProductList(@Path("id") id: String): Call<CategoryProductModel>
 
-    @GET("/api/v1/products/details/{id}")
+    @GET("admin/api/v1/products/details/{id}")
     fun getProductDetail(@Path("id") id: String): Call<ProductDetailModel>
 
-    @GET("/api/v1/coupon/apply")
+    @GET("admin/api/v1/coupon/apply")
     fun applyPromoCode(@Query("code") id: String,@Header("Authorization") token: String): Call<ApplyCodeModel>
 
+    @GET(Constants.API_FETCH_ADDRESS)
+    fun addressFetch(@Header("Authorization") token: String): Call<AddressModel>
+
+    @POST(Constants.API_ADD_ADDRESS)
+    fun addAddress(
+        @Header("Authorization") token: String,
+        @Body jsonObject: JsonObject
+    ): Call<ForgetPasswordModel>
+
+    @POST(Constants.API_PLACE_ORDER)
+    fun placeOrder(
+        @Header("Authorization") token: String,
+        @Body jsonObject: JsonObject
+    ): Call<PlaceOrderModel>
 }

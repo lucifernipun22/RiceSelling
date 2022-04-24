@@ -15,7 +15,7 @@
         android:layout_height="0dp"
         android:background="@color/md_grey_100"
         android:layout_marginBottom="@dimen/_10sdp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_checkout"
+        app:layout_constraintBottom_toTopOf="@+id/btnPlaceOrder"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <LinearLayout
@@ -37,7 +37,7 @@
                     android:fontFamily="@font/montserrat_bold"
                     android:text="Delivery Address"
                     android:textColor="@color/black"
-                    app:layout_constraintBottom_toTopOf="@+id/recyclerView2"
+                    app:layout_constraintBottom_toTopOf="@+id/recyclerViewAdd"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,32 +52,43 @@
                     android:text="Add"
                     android:textColor="@color/md_blue_700"
                     app:layout_constraintBottom_toBottomOf="@+id/textView12"
-                    app:layout_constraintEnd_toEndOf="@+id/recyclerView2"
+                    app:layout_constraintEnd_toEndOf="@+id/recyclerViewAdd"
                     app:layout_constraintTop_toTopOf="@+id/textView12" />
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerView2"
+                    android:id="@+id/recyclerViewAdd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_10sdp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
+                <TextView
+                    android:id="@+id/noAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No Address Found"
+                    app:layout_constraintEnd_toEndOf="@+id/addBtn"
+                    app:layout_constraintStart_toStartOf="@+id/textView12"
+                    app:layout_constraintTop_toBottomOf="@+id/textView12" />
                 <TextView
                     android:id="@+id/textView13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="15dp"
+                    android:visibility="gone"
                     android:fontFamily="@font/montserrat_bold"
                     android:text="Preference Time"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerViewAdd" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_10sdp"
+                    android:visibility="gone"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
@@ -86,6 +97,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_10sdp"
+                    android:visibility="gone"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintTop_toBottomOf="@+id/recyclerView3" />
 
@@ -164,6 +176,7 @@
                     app:layout_constraintEnd_toStartOf="@+id/tv_delivery_value"
                     app:layout_constraintStart_toStartOf="@+id/tv_item_price"
                     app:layout_constraintTop_toBottomOf="@+id/tv_item_price" />
+
                 <TextView
                     android:id="@+id/tv_delivery_value"
                     android:layout_width="wrap_content"
@@ -172,7 +185,8 @@
                     android:fontFamily="@font/helvetica_regular"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_15sdp"
-                    app:layout_constraintEnd_toEndOf="@+id/tv_item_price"
+                    android:text="- ₹ 0.0"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_item_value"
                     app:layout_constraintTop_toBottomOf="@+id/tv_item_price" />
 
                 <View
@@ -217,7 +231,7 @@
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
     <TextView
-        android:id="@+id/btn_checkout"
+        android:id="@+id/btnPlaceOrder"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@drawable/ic_rectangle_green"

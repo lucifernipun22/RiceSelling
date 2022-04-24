@@ -7,6 +7,7 @@ import android.view.View
 import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.google.gson.Gson
 import com.nipun.riceselling.DatabaseHelper
 import com.nipun.riceselling.R
 import com.nipun.riceselling.SessionManager
@@ -21,6 +22,7 @@ import kotlinx.android.synthetic.main.activity_cart.*
 import kotlinx.android.synthetic.main.include_offer_toolbar.view.*
 import java.text.DecimalFormat
 import java.util.*
+
 
 class CartActivity : BaseActivity() {
     var databaseHelper: DatabaseHelper? = null
@@ -53,10 +55,7 @@ class CartActivity : BaseActivity() {
         toolbar.imageView4.setOnClickListener {
             finish()
         }
-        btn_checkout.setOnClickListener {
-            val intent = Intent(this,CheckOutActivity::class.java)
-            startActivity(intent)
-        }
+
         databaseHelper = DatabaseHelper(this)
         sessionManager = SessionManager(this)
         myCarts = ArrayList<MyCart>()
@@ -166,6 +165,18 @@ class CartActivity : BaseActivity() {
                     ResourcesCompat.getFont(this, R.font.helvetica_regular)
                 )
             }
+        }
+
+        btn_checkout.setOnClickListener {
+            val intent = Intent(this,CheckOutActivity::class.java)
+            val gson = Gson()
+            val jsonCart: String = gson.toJson(myCarts)
+            intent.putExtra("cart", jsonCart);
+            intent.putExtra("total",totalRs.toString())
+            intent.putExtra("type","delivery")
+            intent.putExtra("discount",discountValue.toString())
+            intent.putExtra("coupon",editText.text.toString())
+            startActivity(intent)
         }
 
     }

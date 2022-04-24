@@ -43,7 +43,7 @@ public class MyCustomPagerAdapter2 extends PagerAdapter {
         public Object instantiateItem(ViewGroup container, final int position) {
             View itemView = layoutInflater.inflate(R.layout.item_image, container, false);
             ImageView imageView = (ImageView) itemView.findViewById(R.id.imageView);
-            Glide.with(context).load(Constants.API_BASE_URL + "storage/app/public/product/" + imageList.getImage().get(position)).placeholder(R.drawable.empty).into(imageView);
+            Glide.with(context).load(Constants.API_BASE_URL + "admin/storage/app/public/product/" + imageList.getImage().get(position)).placeholder(R.drawable.empty).into(imageView);
             container.addView(itemView);
 
             return itemView;
