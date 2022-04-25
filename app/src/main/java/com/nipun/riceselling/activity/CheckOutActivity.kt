@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.nipun.riceselling.DatabaseHelper
 import com.nipun.riceselling.R
 import com.nipun.riceselling.SessionManager
 import com.nipun.riceselling.adapter.AddressAdapter
@@ -16,7 +17,6 @@ import com.nipun.riceselling.viewModel.AddressFetchViewModel
 import com.nipun.riceselling.viewModel.AddressFetchViewModelFactory
 import com.nipun.riceselling.viewModel.PlaceOrderViewModel
 import com.nipun.riceselling.viewModel.PlaceOrderViewModelFactory
-import kotlinx.android.synthetic.main.activity_add_address.*
 import kotlinx.android.synthetic.main.activity_check_out.*
 import kotlinx.android.synthetic.main.activity_check_out.toolbar
 import kotlinx.android.synthetic.main.include_offer_toolbar.view.*
@@ -25,11 +25,15 @@ import java.lang.reflect.Type
 
 class CheckOutActivity : BaseActivity() {
     var total: String? = null
-    var type: String? = null
+    var typee: String? = null
     var discount: String? = null
     var coupon: String? = null
     var deliveryCharges = 0.0
     var cartList: ArrayList<MyCart>? = null
+    var addressPosition = 0
+    var paymentMethod =""
+    private var myCart = MyCart()
+    private var databaseHelper: DatabaseHelper? = null
 
     private val fetchAddressViewModel: AddressFetchViewModel by lazy {
         val viewModelProviderFactory =
@@ -58,7 +62,7 @@ class CheckOutActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_check_out)
-
+        databaseHelper = DatabaseHelper(this)
         sessionManager = SessionManager(this)
         initView()
     }
@@ -70,7 +74,7 @@ class CheckOutActivity : BaseActivity() {
             sessionManager!!.getStringData("token").toString()
         ).observe(this, {
             recyclerViewAdd.layoutManager =
-                LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+                LinearLayoutManager(this, LinearLayoutManager.VERTICAL, true)
             addressAdapter = AddressAdapter(it, this)
             if (it.size > 0) {
                 recyclerViewAdd.adapter = addressAdapter
@@ -83,7 +87,7 @@ class CheckOutActivity : BaseActivity() {
 
         })
         total = intent.getStringExtra("total")
-        type = intent.getStringExtra("type")
+        typee = intent.getStringExtra("type")
         discount = intent.getStringExtra("discount")
         coupon = intent.getStringExtra("coupon")
         val cartListAsString = intent.getStringExtra("cart")
@@ -102,8 +106,23 @@ class CheckOutActivity : BaseActivity() {
             startActivity(intent)
         }
         btnPlaceOrder.setOnClickListener {
-            if(cashRb.isSelected||digiRb.isSelected){
-                
+            if(cashRb.isChecked||digiRb.isChecked){
+                if(cashRb.isChecked){
+                    paymentMethod = "cash_on_delivery"
+                }else{
+                    paymentMethod ="Online"
+                }
+                placeOrderViewModel.placeOrderApi(this,sessionManager!!.getStringData("token").toString(),cartList!!,total,typee,coupon,discount,addressPosition,paymentMethod).observe(this,{
+                    if(paymentMethod =="cash_on_delivery"){
+                        val intent = Intent(this,OrderSuccessFullyActivity::class.java)
+                        startActivity(intent)
+                    }else{
+                        val intent = Intent(this,PaymentActivity::class.java)
+                        intent.putExtra("orderId",it.order_id)
+                        startActivity(intent)
+                    }
+                })
+
             }
         }
     }

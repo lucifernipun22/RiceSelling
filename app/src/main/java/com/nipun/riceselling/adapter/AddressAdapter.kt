@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nipun.riceselling.R
+import com.nipun.riceselling.activity.CheckOutActivity
 import com.nipun.riceselling.model.AddressModel
 import com.nipun.riceselling.viewHolder.AddressViewHolder
 
@@ -27,6 +28,7 @@ class AddressAdapter(var categoryListModel: AddressModel, var context: Context) 
         if (holder is AddressViewHolder) {
             if (selectedItem == position) {
                 holder.radioButton.isChecked = true
+                (context as CheckOutActivity).addressPosition = position
             }else{
                 holder.radioButton.isChecked = false
             }

@@ -4,9 +4,10 @@ import android.annotation.SuppressLint
 import android.content.Context
 import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.MutableLiveData
+import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import com.nipun.riceselling.R
-import com.nipun.riceselling.model.ForgetPasswordModel
+import com.nipun.riceselling.model.MyCart
 import com.nipun.riceselling.model.PlaceOrderModel
 import com.nipun.riceselling.utils.BaseActivity
 import com.nipun.riceselling.utils.Constants
@@ -16,38 +17,67 @@ import com.nipun.riceselling.utils.motionToast.MotionToastStyle
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.*
 
 class PlaceOrderRepository(var baseActivity: BaseActivity) {
 
     private var couponRepository = MutableLiveData<PlaceOrderModel>()
 
     fun hitPlaceOrder(
-        address: String,
-        address_type: String,
-        contact_person_name: String,
-        contact_person_number: String,
-        created_at: String,
-        id: Int,
-        latitude: String,
-        longitude: String,
-        updated_at: String,
-        user_id: Int,
         context: Context,
-        token: String
+        token: String,
+        myCart: ArrayList<MyCart>,
+        total: String?,
+        type: String?,
+        coupon: String?,
+        discount: String?,
+        addressPosition: Int,
+        paymentMethod: String
     ): MutableLiveData<PlaceOrderModel> {
         if (Utiles.Utiles.internetChack()) {
-            val jsonObject = JsonObject()
-            jsonObject.addProperty("id",id)
-            jsonObject.addProperty("latitude", latitude)
-            jsonObject.addProperty("longitude", longitude)
-            jsonObject.addProperty("updated_at", updated_at)
-            jsonObject.addProperty("user_id", user_id)
-            jsonObject.addProperty("created_at", created_at)
-            jsonObject.addProperty("contact_person_number", contact_person_number)
-            jsonObject.addProperty("contact_person_name", contact_person_name)
-            jsonObject.addProperty("address_type", address_type)
-            jsonObject.addProperty("address",address)
+            val calendar: Calendar = Calendar.getInstance()
 
+            calendar.add(Calendar.DAY_OF_YEAR, 2)
+            val Daytomorrow: Date = calendar.time
+            val dateFormat: DateFormat = SimpleDateFormat("yyyy-MM-dd")
+
+            val tomorrowAsString: String = dateFormat.format(Daytomorrow)
+            var jsonArray = JsonArray()
+            var jsonArray2 = JsonArray()
+            val jsonObject = JsonObject()
+            for(i in myCart.indices){
+                val jsonObjectData = JsonObject()
+                jsonObjectData.addProperty("type", type)
+                jsonArray2.add(jsonObjectData)
+            }
+            for (i in myCart.indices) {
+                val jsonObjectData = JsonObject()
+                val myCart: MyCart = myCart[i]
+                jsonObjectData.addProperty("product_id", myCart.pid)
+                jsonObjectData.addProperty("price",total )
+                jsonObjectData.addProperty("variant", "")
+                jsonObjectData.add("variation", jsonArray2)
+                jsonObjectData.addProperty("discount_amount", discount)
+                jsonObjectData.addProperty("quantity", myCart.qty)
+                jsonObjectData.add("tax_amount", jsonArray2)
+                jsonArray.add(jsonObjectData)
+            }
+
+            jsonObject.add("cart",jsonArray)
+            jsonObject.addProperty("coupon_discount_amount", discount?.toDouble())
+            jsonObject.addProperty("coupon_discount_title", coupon)
+            jsonObject.addProperty("order_amount", total?.toDouble()!! - discount!!.toDouble())
+            jsonObject.addProperty("order_type", type)
+            jsonObject.addProperty("branch_id", 1)
+            jsonObject.addProperty("delivery_address_id", addressPosition)
+            jsonObject.addProperty("time_slot_id", 1)
+            jsonObject.addProperty("delivery_date", tomorrowAsString)
+            jsonObject.addProperty("payment_method",paymentMethod)
+            jsonObject.addProperty("order_note", "")
+            jsonObject.addProperty("coupon_code", coupon)
+            jsonObject.addProperty("distance",0)
             val call: Call<PlaceOrderModel> =
                 baseActivity.apiService!!.placeOrder("Bearer ${token}",jsonObject)
             baseActivity.startProgress()
